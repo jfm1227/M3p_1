@@ -1,20 +1,22 @@
+# src/m3p/etl/build_trainset.py
+
 import argparse
 import json
 import unicodedata
 import yaml
 import os
+import math
 from pathlib import Path
-
-###########################################################################
-# 既存コード（to_kana, normalize_transcript, chunk_transcript, etc）
-###########################################################################
 
 MOUTHS = ["close", "a", "i", "u", "e", "o"]
 M2ID = {m: i for i, m in enumerate(MOUTHS)}
+ID2M = {i: m for m, i in M2ID.items()}
+
 
 # かな化（pykakasiがあれば使用、なければNFKC）
 try:
     from pykakasi import kakasi
+
     _k = kakasi()
     _k.setMode("J", "H")
     _k.setMode("K", "H")
@@ -26,6 +28,7 @@ try:
             return _conv.do(s.strip())
         except Exception:
             return unicodedata.normalize("NFKC", s)
+
 except Exception:
     def to_kana(s: str) -> str:
         return unicodedata.normalize("NFKC", s)
@@ -101,12 +104,70 @@ def chunk_transcript(words, min_ms=300, max_ms=800):
         yield cur
 
 
+# --- ここから mouth イベントの正規化ヘルパー -----------------------------
+
+
+def normalize_mouth_events(mouth_events_raw):
+    """
+    mouth_events_raw を必ず
+      [{"t_ms":..., "mouth6": <str>}, ...]
+    という形に正規化する。
+
+    想定する入力の例:
+      - [{"t_ms":..., "mouth6": "a"}, ...]
+      - [{"t_ms":..., "mouth": "a"}, ...]
+      - [{"t_ms":..., "label": "a"}, ...]
+      - [{"t_ms":..., "mouth_id": 1}, ...]  # 数値ID
+    """
+    if not mouth_events_raw:
+        return []
+
+    # 先頭要素を見て mouth6 相当のキーを推定
+    sample = mouth_events_raw[0]
+    candidate_keys = ["mouth6", "mouth", "mouth_label", "label", "mouth_id"]
+    key = None
+    for c in candidate_keys:
+        if isinstance(sample, dict) and c in sample:
+            key = c
+            break
+
+    out = []
+    if key is None:
+        # mouth 情報が無い場合 → すべて "close" として扱う（Day2最小用のフォールバック）
+        for ev in mouth_events_raw:
+            t = ev.get("t_ms", 0)
+            out.append({"t_ms": t, "mouth6": "close"})
+        return out
+
+    for ev in mouth_events_raw:
+        if not isinstance(ev, dict):
+            continue
+        t = ev.get("t_ms", 0)
+        raw = ev.get(key)
+
+        if isinstance(raw, int):
+            label = ID2M.get(raw, "close")
+        else:
+            label = raw or "close"
+
+        # 万一ありえないラベルが来た場合も "close" にフォールバック
+        if label not in M2ID:
+            label = "close"
+
+        out.append({"t_ms": t, "mouth6": label})
+
+    return out
+
+
 def resample_steps(mouth_events, t0, t1, step_ms):
     """
-    mouth_events: [{"t_ms":..., "mouth6":...}, ...]
+    mouth_events: [{"t_ms":..., "mouth6":...}, ...] or それに準ずる形式
     区間[t0, t1) を step_ms ごとに mouth6 ID 配列に変換。
     """
-    ev = sorted(mouth_events, key=lambda x: x["t_ms"])
+    # まず mouth6 付きに正規化
+    ev = normalize_mouth_events(mouth_events)
+
+    ev = sorted(ev, key=lambda x: x["t_ms"])
     if ev:
         ev.append({"t_ms": 10**12, "mouth6": ev[-1]["mouth6"]})
     else:
@@ -120,7 +181,8 @@ def resample_steps(mouth_events, t0, t1, step_ms):
             prev = e["mouth6"]
         return prev
 
-    T = max(1, round((t1 - t0) / step_ms))
+    # --- Day7: 区間長から T を ceil で計算する ---
+    T = max(1, math.ceil((t1 - t0) / step_ms))
     out = []
     for i in range(T):
         m = mouth_at(t0 + i * step_ms)
@@ -128,9 +190,24 @@ def resample_steps(mouth_events, t0, t1, step_ms):
     return out
 
 
-###########################################################################
-# Day2 manifest モード用：追加ユーティリティ
-###########################################################################
+# --- pose_timeline の dict/list 形式違いを吸収 ----------------------------
+
+
+def get_mouth_events(pose_raw):
+    """
+    pose_timeline.json の形式の違いを吸収するヘルパー。
+    - {"timeline": [...]} の場合 → その中身
+    - [... のリスト直置き] の場合 → そのリスト
+    """
+    if isinstance(pose_raw, dict) and "timeline" in pose_raw:
+        return pose_raw["timeline"]
+    if isinstance(pose_raw, list):
+        return pose_raw
+    raise ValueError(f"Unexpected pose_timeline format: {type(pose_raw)}")
+
+
+# --- Day2 manifest モード用ユーティリティ -------------------------------
+
 
 def load_manifest(path: str):
     """
@@ -160,9 +237,9 @@ def build_item_from_session(sess: dict, step_ms: int):
     pose = load_json(sess["pose_timeline"])
 
     words = normalize_transcript(transcript)
-    mouth_events = pose["timeline"]
+    mouth_events = get_mouth_events(pose)  # → resample_steps 内で正規化される
 
-    # Day2最小セットなので「1セッション＝1サンプル」
+    # Day2/Day7 最小セットなので「1セッション＝1サンプル」
     t0 = words[0]["start_ms"]
     t1 = words[-1]["end_ms"]
 
@@ -180,7 +257,7 @@ def build_item_from_session(sess: dict, step_ms: int):
         "T": len(steps),
         "mouth_steps": steps,
         "t0_ms": t0,
-        "t1_ms": t1
+        "t1_ms": t1,
     }
 
 
@@ -192,9 +269,8 @@ def build_jsonl_from_sessions(sessions, out_path: Path, step_ms: int):
             fw.write(json.dumps(item, ensure_ascii=False) + "\n")
 
 
-###########################################################################
-# 既存（単一ファイル）モード ＋ manifest モードの2段構え main
-###########################################################################
+# --- main: manifest モード or 単一ファイルモード ------------------------
+
 
 def main(cfg):
     """
@@ -229,7 +305,7 @@ def main(cfg):
     raw_tr = load_json(paths["transcript"])
     words = normalize_transcript(raw_tr)
     pose = load_json(paths["pose_timeline"])
-    mouth_events = pose["timeline"]
+    mouth_events = get_mouth_events(pose)
 
     Path(paths["train_samples"]).parent.mkdir(parents=True, exist_ok=True)
     f_train = open(paths["train_samples"], "w", encoding="utf-8")

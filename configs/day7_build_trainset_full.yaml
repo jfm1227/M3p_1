@@ -1,0 +1,11 @@
+# configs/day7_build_trainset_full.yaml
+# Day7: 25fps CSV 27本 → 中サイズ train/val JSONL (v3.full) 生成用
+
+paths:
+  manifest: "data/day7/manifest.yaml"
+
+  train_samples: "out/day7/train_samples.v3.full.jsonl"
+  val_samples:   "out/day7/val_samples.v3.full.jsonl"
+
+# 25fps → 40ms ステップ
+step_ms: 40

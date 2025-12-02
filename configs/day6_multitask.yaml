@@ -1,0 +1,38 @@
+# configs/day6_multitask.yaml
+
+paths:
+  train_samples: "out/day4/train_samples.v2.jsonl"
+  val_samples:   "out/day4/val_samples.v2.jsonl"  # まだ train.py では未使用だが将来用に保持
+  out_dir:       "out/exp_day6_multitask"
+
+step_ms: 40
+
+dataset:
+  max_len: 160
+  min_T: 1
+  max_T: 200
+
+model:
+  emb_dim: 128
+  n_layers: 4
+  n_heads: 4
+  ffn_dim: 256
+  dropout: 0.1
+  ncls: 6          # 6口型
+  ncls_coarse: 3   # close / 横系 / 縦系
+  multitask: true  # ← ここでマルチタスクを有効化
+
+train:
+  batch_size: 32
+  num_epochs: 20
+  lr: 1.0e-3
+  weight_decay: 1.0e-4
+  label_smoothing: 0.05          # fine 用
+  coarse_label_smoothing: 0.0    # coarse 用（必要なら調整）
+  coarse_loss_weight: 0.3        # fine + 0.3 * coarse
+  early_stop_patience: 5
+  grad_clip: 1.0
+  num_workers: 2
+  seed: 42
+
+device: "cuda"

@@ -1,0 +1,80 @@
+# configs/pose_3_1_1.yaml
+# DLC CSV（3_1_1）→ M3 用 pose_timeline.json を生成する専用設定
+
+step_ms: 40
+
+paths:
+  # DLC CSV（in 直下）
+  dlc_csv: "in/3_1_1.csv"
+
+  # 出力先（manifest が参照するパスと一致）
+  pose_timeline: "in/day2/pose/3_1_1.pose_timeline.json"
+
+  # 以下は dlc_to_pose では未使用（互換性維持）
+  transcript: "in/transcript.json"
+  train_samples: "in/train_samples.jsonl"
+  val_samples: "in/val_samples.jsonl"
+  out_dir: "out/exp_smoke"
+
+dlc_columns:
+  timestamp: "timestamp"
+  fps: 25
+  frame: "frame"
+
+  ulx: "mouth_outer_upper_x"
+  uly: "mouth_outer_upper_y"
+  llx: "mouth_outer_lower_x"
+  lly: "mouth_outer_lower_y"
+
+  mlx: "mouth_outer_left_x"
+  mly: "mouth_outer_left_y"
+  mrx: "mouth_outer_right_x"
+  mry: "mouth_outer_right_y"
+
+  flx: "contour_left2_x"
+  fly: "contour_left2_y"
+  frx: "contour_right2_x"
+  fry: "contour_right2_y"
+
+  lk_ul: "mouth_outer_upper_likelihood"
+  lk_ll: "mouth_outer_lower_likelihood"
+  lk_ml: "mouth_outer_left_likelihood"
+  lk_mr: "mouth_outer_right_likelihood"
+
+tau: [0.12, 0.25, 0.40]
+rho: [0.30, 0.50, 0.70]
+
+likelihood_threshold: 0.6
+median_k: 1
+hys_low_keep: 0
+hys_high_keep: 1
+
+dataset:
+  max_len: 160
+  min_T: 1
+  max_T: 200
+
+model:
+  emb_dim: 128
+  n_layers: 4
+  n_heads: 4
+  ffn_dim: 256
+  dropout: 0.1
+  ncls: 6
+
+train:
+  batch_size: 32
+  num_epochs: 20
+  lr: 1.0e-3
+  weight_decay: 1.0e-4
+  label_smoothing: 0.05
+  early_stop_patience: 5
+  grad_clip: 1.0
+  num_workers: 2
+  seed: 42
+
+device: "cuda"
+
+
+
+debug: true

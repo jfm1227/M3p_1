@@ -1,0 +1,56 @@
+paths:
+  train_samples: "out/day7/train_samples.v3.full.jsonl"
+  val_samples:   "out/day7/val_samples.v3.full.jsonl"
+  out_dir:       "out/exp_day7_ce_weighted_full"
+
+step_ms: 40
+
+dataset:
+  max_len: 160
+  min_T: 1
+  max_T: 200
+
+model:
+  emb_dim: 128
+  n_layers: 4
+  n_heads: 4
+  ffn_dim: 256
+  dropout: 0.1
+  ncls: 6          # 6口型
+  ncls_coarse: 3   # マルチタスクOFFなので実質未使用
+  multitask: false # ★ 単一ヘッド（6クラス）に固定
+
+train:
+  batch_size: 32
+  num_epochs: 30
+  lr: 1.0e-3
+  weight_decay: 1.0e-4
+  label_smoothing: 0.05   # Day6 と同程度の smoothing
+  early_stop_patience: 5
+  grad_clip: 1.0
+  num_workers: 2
+  seed: 42
+
+  # Day7: class-weighted CrossEntropy（train_full の分布から算出）
+  # w_c ≒ total_frames / (6 * count_c) をベースにスケーリング
+  #
+  # train_full の分布：
+  #   0: 1525 (7.2%)
+  #   1: 8573 (40.7%)
+  #   2:   ≒ 0   (ほぼ出現せず)
+  #   3:  775 (3.7%)
+  #   4: 7562 (35.9%)
+  #   5: 2649 (12.6%)
+  #
+  # そこから目安として：
+  #   w0 ≒ 2.30
+  #   w1 ≒ 0.41
+  #   w3 ≒ 4.53
+  #   w4 ≒ 0.46
+  #   w5 ≒ 1.33
+  #   w2 は「中間口形で出現少ないが重要度は中程度」として 2.0 に手動設定
+  loss_type: "ce"  # "ce" or "focal"
+  # label 0〜5 に対応（close / a / i / u / e / o）
+  class_weight: [2.30, 0.41, 2.00, 4.53, 0.46, 1.33]
+
+device: "cuda"

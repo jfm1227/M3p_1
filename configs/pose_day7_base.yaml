@@ -1,0 +1,50 @@
+# configs/pose_day7_base.yaml
+# ============================================
+# M3' Day7 pose_timeline 生成用 共通設定
+# （Day3 aggr プリセットをベース）
+# ============================================
+
+step_ms: 40   # 25fps 相当（M3' 全体で統一）
+
+paths:
+  # ★ここはバッチ側で ID ごとに上書きするのでダミーでOK
+  dlc_csv: "in/DUMMY.csv"
+  pose_timeline: "out/day7/pose/DUMMY.pose_timeline.json"
+
+# DLC CSV の列定義（Day3 aggr からそのまま継承）
+dlc_columns:
+  timestamp: "timestamp"
+  fps: 25
+  frame: "frame"
+
+  ulx: "mouth_outer_upper_x"
+  uly: "mouth_outer_upper_y"
+  llx: "mouth_outer_lower_x"
+  lly: "mouth_outer_lower_y"
+
+  mlx: "mouth_outer_left_x"
+  mly: "mouth_outer_left_y"
+  mrx: "mouth_outer_right_x"
+  mry: "mouth_outer_right_y"
+
+  flx: "contour_left2_x"
+  fly: "contour_left2_y"
+  frx: "contour_right2_x"
+  fry: "contour_right2_y"
+
+  lk_ul: "mouth_outer_upper_likelihood"
+  lk_ll: "mouth_outer_lower_likelihood"
+  lk_ml: "mouth_outer_left_likelihood"
+  lk_mr: "mouth_outer_right_likelihood"
+
+# ★ Day3 aggr プリセット（現時点の最終値）
+tau: [0.30, 0.70, 1.20]
+rho: [0.30, 0.60, 1.20]
+median_k: 1
+hys_low_keep: 0
+hys_high_keep: 1
+
+likelihood_threshold: 0.6
+
+# デバッグを有効にしたければ true にする
+debug: false

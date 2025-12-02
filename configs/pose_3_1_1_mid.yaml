@@ -1,0 +1,33 @@
+step_ms: 40
+likelihood_threshold: 0.6
+paths:
+  dlc_csv: "in/3_1_1.csv"
+  pose_timeline: "out/day3/mid/3_1_1/pose_timeline.json"
+
+dlc_columns:
+  timestamp: "timestamp"
+  fps: 25
+  frame: "frame"
+  ulx: "mouth_outer_upper_x"
+  uly: "mouth_outer_upper_y"
+  llx: "mouth_outer_lower_x"
+  lly: "mouth_outer_lower_y"
+  mlx: "mouth_outer_left_x"
+  mly: "mouth_outer_left_y"
+  mrx: "mouth_outer_right_x"
+  mry: "mouth_outer_right_y"
+  flx: "contour_left2_x"
+  fly: "contour_left2_y"
+  frx: "contour_right2_x"
+  fry: "contour_right2_y"
+  lk_ul: "mouth_outer_upper_likelihood"
+  lk_ll: "mouth_outer_lower_likelihood"
+  lk_ml: "mouth_outer_left_likelihood"
+  lk_mr: "mouth_outer_right_likelihood"
+
+tau: [0.40, 0.90, 1.60]
+rho: [0.40, 0.80, 1.60]
+median_k: 2
+hys_low_keep: 1
+hys_high_keep: 1
+debug: false

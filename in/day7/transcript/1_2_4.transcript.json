@@ -1,0 +1,1767 @@
+{
+  "audio": "1_2_4.wav",
+  "language": "ja",
+  "model": "small",
+  "device": "cpu",
+  "compute_type": "int8",
+  "segments": [
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "start": 3.25,
+      "end": 8.11,
+      "text": "わかる。私もそのバンドのフリーライブめっちゃ楽しみ。",
+      "avg_logprob": -0.321030706801313,
+      "no_speech_prob": 0.1869610995054245,
+      "temperature": 0.0,
+      "compression_ratio": 1.248
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "start": 8.61,
+      "end": 12.59,
+      "text": "見ようと一緒に行けるなんて、もうそれだけでハッピー。",
+      "avg_logprob": -0.321030706801313,
+      "no_speech_prob": 0.1869610995054245,
+      "temperature": 0.0,
+      "compression_ratio": 1.248
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 2,
+      "start": 13.25,
+      "end": 16.65,
+      "text": "ねえどんな服着ていこうかマリョウよねー",
+      "avg_logprob": -0.17061611065374954,
+      "no_speech_prob": 0.8469734787940979,
+      "temperature": 0.0,
+      "compression_ratio": 4.448275862068965
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 3,
+      "start": 16.65,
+      "end": 18.83,
+      "text": "やっぱりちょっとロックっぽい感じ?",
+      "avg_logprob": -0.17061611065374954,
+      "no_speech_prob": 0.8469734787940979,
+      "temperature": 0.0,
+      "compression_ratio": 4.448275862068965
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "start": 19.79,
+      "end": 22.57,
+      "text": "でもあんまり気合入りすぎても浮いちゃうかも",
+      "avg_logprob": -0.17061611065374954,
+      "no_speech_prob": 0.8469734787940979,
+      "temperature": 0.0,
+      "compression_ratio": 4.448275862068965
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "start": 22.57,
+      "end": 30.07,
+      "text": "かなぁ 三葉がどんな服か決めたら教えてリンクコーデーとか絶対可愛いからしたい",
+      "avg_logprob": -0.18884688271416558,
+      "no_speech_prob": 0.9378972053527832,
+      "temperature": 0.0,
+      "compression_ratio": 6.281481481481482
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 6,
+      "start": 31.07,
+      "end": 32.23,
+      "text": "ライブ当時くまで ライブ当時くまで",
+      "avg_logprob": -0.18884688271416558,
+      "no_speech_prob": 0.9378972053527832,
+      "temperature": 0.0,
+      "compression_ratio": 6.281481481481482
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "start": 32.23,
+      "end": 32.29,
+      "text": "ライブ当時くまでライブ当時くまでライブ当時くまで",
+      "avg_logprob": -0.18884688271416558,
+      "no_speech_prob": 0.9378972053527832,
+      "temperature": 0.0,
+      "compression_ratio": 6.281481481481482
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "start": 32.29,
+      "end": 35.55,
+      "text": "そのバンドの曲聞きまくって予習しておかないと",
+      "avg_logprob": -0.15784712261623807,
+      "no_speech_prob": 0.8465063571929932,
+      "temperature": 0.0,
+      "compression_ratio": 4.771428571428571
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 9,
+      "start": 36.09,
+      "end": 37.91,
+      "text": "みおのおすすめの曲とかある?",
+      "avg_logprob": -0.15784712261623807,
+      "no_speech_prob": 0.8465063571929932,
+      "temperature": 0.0,
+      "compression_ratio": 4.771428571428571
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 10,
+      "start": 38.55,
+      "end": 41.85,
+      "text": "全部聞いて当日一緒に熱衝したい!",
+      "avg_logprob": -0.15784712261623807,
+      "no_speech_prob": 0.8465063571929932,
+      "temperature": 0.0,
+      "compression_ratio": 4.771428571428571
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "start": 41.85,
+      "end": 48.59,
+      "text": "ああ、もう楽しみすぎて勉強どころじゃないかも。でもライブを楽しむためにも。",
+      "avg_logprob": -0.29403066355735064,
+      "no_speech_prob": 0.08115128427743912,
+      "temperature": 0.0,
+      "compression_ratio": 1.2065217391304348
+    }
+  ],
+  "words": [
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "わか",
+      "start": 3.25,
+      "end": 3.97,
+      "probability": 0.45648953318595886
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "る。",
+      "start": 3.97,
+      "end": 4.23,
+      "probability": 0.9980419874191284
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "私",
+      "start": 4.63,
+      "end": 4.99,
+      "probability": 0.8803289532661438
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "も",
+      "start": 4.99,
+      "end": 5.27,
+      "probability": 0.994678258895874
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "その",
+      "start": 5.27,
+      "end": 5.65,
+      "probability": 0.7827476263046265
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "バ",
+      "start": 5.65,
+      "end": 5.89,
+      "probability": 0.9728007912635803
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "ンド",
+      "start": 5.89,
+      "end": 5.99,
+      "probability": 0.9967799782752991
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "の",
+      "start": 5.99,
+      "end": 6.17,
+      "probability": 0.9920355677604675
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "フ",
+      "start": 6.17,
+      "end": 6.35,
+      "probability": 0.513271152973175
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "リ",
+      "start": 6.35,
+      "end": 6.43,
+      "probability": 0.9805669188499451
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "ー",
+      "start": 6.43,
+      "end": 6.53,
+      "probability": 0.9777255058288574
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "ライ",
+      "start": 6.53,
+      "end": 6.65,
+      "probability": 0.9946932196617126
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "ブ",
+      "start": 6.65,
+      "end": 6.81,
+      "probability": 0.9953977465629578
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "め",
+      "start": 6.81,
+      "end": 7.23,
+      "probability": 0.38639047741889954
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "っちゃ",
+      "start": 7.23,
+      "end": 7.53,
+      "probability": 0.9927592277526855
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "楽",
+      "start": 7.53,
+      "end": 7.75,
+      "probability": 0.9902043342590332
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "し",
+      "start": 7.75,
+      "end": 7.93,
+      "probability": 0.9932215213775635
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 0,
+      "word": "み。",
+      "start": 7.93,
+      "end": 8.11,
+      "probability": 0.9938862919807434
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "見",
+      "start": 8.61,
+      "end": 8.99,
+      "probability": 0.232844278216362
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "よう",
+      "start": 8.99,
+      "end": 9.11,
+      "probability": 0.16780905425548553
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "と",
+      "start": 9.11,
+      "end": 9.27,
+      "probability": 0.9969026446342468
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "一",
+      "start": 9.27,
+      "end": 9.43,
+      "probability": 0.946947455406189
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "緒",
+      "start": 9.43,
+      "end": 9.59,
+      "probability": 0.998869001865387
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "に",
+      "start": 9.59,
+      "end": 9.71,
+      "probability": 0.9968570470809937
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "行",
+      "start": 9.71,
+      "end": 9.85,
+      "probability": 0.4158875644207001
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "ける",
+      "start": 9.85,
+      "end": 9.99,
+      "probability": 0.9995501637458801
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "なん",
+      "start": 9.99,
+      "end": 10.17,
+      "probability": 0.9975469708442688
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "て、",
+      "start": 10.17,
+      "end": 10.45,
+      "probability": 0.9997420907020569
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "もう",
+      "start": 10.57,
+      "end": 10.85,
+      "probability": 0.9594538807868958
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "それ",
+      "start": 10.85,
+      "end": 11.13,
+      "probability": 0.9868326187133789
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "だけ",
+      "start": 11.13,
+      "end": 11.39,
+      "probability": 0.9955390095710754
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "で",
+      "start": 11.39,
+      "end": 11.61,
+      "probability": 0.993160605430603
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "ハ",
+      "start": 11.61,
+      "end": 12.05,
+      "probability": 0.7101877927780151
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "ッ",
+      "start": 12.05,
+      "end": 12.23,
+      "probability": 0.9898622035980225
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "ピ",
+      "start": 12.23,
+      "end": 12.33,
+      "probability": 0.9951412677764893
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 1,
+      "word": "ー。",
+      "start": 12.33,
+      "end": 12.59,
+      "probability": 0.96848464012146
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 2,
+      "word": "ね",
+      "start": 13.25,
+      "end": 13.61,
+      "probability": 0.3226727843284607
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 2,
+      "word": "え",
+      "start": 13.61,
+      "end": 13.97,
+      "probability": 0.5573424696922302
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 2,
+      "word": "ど",
+      "start": 13.97,
+      "end": 14.33,
+      "probability": 0.33693742752075195
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 2,
+      "word": "んな",
+      "start": 14.33,
+      "end": 14.59,
+      "probability": 0.9950628876686096
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 2,
+      "word": "服",
+      "start": 14.59,
+      "end": 14.75,
+      "probability": 0.9823973178863525
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 2,
+      "word": "着",
+      "start": 14.75,
+      "end": 14.97,
+      "probability": 0.983100414276123
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 2,
+      "word": "て",
+      "start": 14.97,
+      "end": 15.09,
+      "probability": 0.9984390139579773
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 2,
+      "word": "い",
+      "start": 15.09,
+      "end": 15.19,
+      "probability": 0.955312967300415
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 2,
+      "word": "こう",
+      "start": 15.19,
+      "end": 15.37,
+      "probability": 0.9939456582069397
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 2,
+      "word": "か",
+      "start": 15.37,
+      "end": 15.57,
+      "probability": 0.979546070098877
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 2,
+      "word": "マ",
+      "start": 15.57,
+      "end": 15.75,
+      "probability": 0.20930126309394836
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 2,
+      "word": "リ",
+      "start": 15.75,
+      "end": 15.87,
+      "probability": 0.9930704236030579
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 2,
+      "word": "ョ",
+      "start": 15.87,
+      "end": 15.91,
+      "probability": 0.47247445583343506
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 2,
+      "word": "ウ",
+      "start": 15.91,
+      "end": 15.99,
+      "probability": 0.6966632008552551
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 2,
+      "word": "よね",
+      "start": 15.99,
+      "end": 16.29,
+      "probability": 0.27875518798828125
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 2,
+      "word": "ー",
+      "start": 16.29,
+      "end": 16.65,
+      "probability": 0.3560326099395752
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 3,
+      "word": "や",
+      "start": 16.65,
+      "end": 17.25,
+      "probability": 0.4325978457927704
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 3,
+      "word": "っぱ",
+      "start": 17.25,
+      "end": 17.45,
+      "probability": 0.9948733448982239
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 3,
+      "word": "り",
+      "start": 17.45,
+      "end": 17.55,
+      "probability": 0.9972496628761292
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 3,
+      "word": "ちょっと",
+      "start": 17.55,
+      "end": 17.77,
+      "probability": 0.9757785201072693
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 3,
+      "word": "ロ",
+      "start": 17.77,
+      "end": 18.11,
+      "probability": 0.9559741020202637
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 3,
+      "word": "ック",
+      "start": 18.11,
+      "end": 18.25,
+      "probability": 0.9879898428916931
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 3,
+      "word": "っぽ",
+      "start": 18.25,
+      "end": 18.51,
+      "probability": 0.9874309003353119
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 3,
+      "word": "い",
+      "start": 18.51,
+      "end": 18.61,
+      "probability": 0.9914201498031616
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 3,
+      "word": "感じ?",
+      "start": 18.61,
+      "end": 18.83,
+      "probability": 0.9619883894920349
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "でも",
+      "start": 19.79,
+      "end": 19.93,
+      "probability": 0.8276986479759216
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "あ",
+      "start": 19.93,
+      "end": 20.49,
+      "probability": 0.8174499273300171
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "ん",
+      "start": 20.49,
+      "end": 20.61,
+      "probability": 0.9925416707992554
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "まり",
+      "start": 20.61,
+      "end": 20.79,
+      "probability": 0.996426522731781
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "気",
+      "start": 20.79,
+      "end": 21.01,
+      "probability": 0.8190099596977234
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "合",
+      "start": 21.01,
+      "end": 21.09,
+      "probability": 0.9821293950080872
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "入",
+      "start": 21.09,
+      "end": 21.35,
+      "probability": 0.43544453382492065
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "り",
+      "start": 21.35,
+      "end": 21.49,
+      "probability": 0.9966059923171997
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "す",
+      "start": 21.49,
+      "end": 21.61,
+      "probability": 0.8374834656715393
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "ぎ",
+      "start": 21.61,
+      "end": 21.71,
+      "probability": 0.9971600770950317
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "て",
+      "start": 21.71,
+      "end": 21.87,
+      "probability": 0.9938997030258179
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "も",
+      "start": 21.87,
+      "end": 22.03,
+      "probability": 0.7903817296028137
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "浮",
+      "start": 22.03,
+      "end": 22.21,
+      "probability": 0.7871422469615936
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "い",
+      "start": 22.21,
+      "end": 22.37,
+      "probability": 0.9815899729728699
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "ちゃ",
+      "start": 22.37,
+      "end": 22.49,
+      "probability": 0.9963358640670776
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "う",
+      "start": 22.49,
+      "end": 22.57,
+      "probability": 0.9273624420166016
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "か",
+      "start": 22.57,
+      "end": 22.57,
+      "probability": 0.7408410310745239
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 4,
+      "word": "も",
+      "start": 22.57,
+      "end": 22.57,
+      "probability": 0.17650818824768066
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "かな",
+      "start": 22.57,
+      "end": 22.85,
+      "probability": 0.10113000124692917
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "ぁ",
+      "start": 22.85,
+      "end": 23.35,
+      "probability": 0.48793211579322815
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "三",
+      "start": 23.49,
+      "end": 24.17,
+      "probability": 0.14233867824077606
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "葉",
+      "start": 24.17,
+      "end": 24.27,
+      "probability": 0.10953163355588913
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "が",
+      "start": 24.27,
+      "end": 24.41,
+      "probability": 0.9861990213394165
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "ど",
+      "start": 24.41,
+      "end": 24.57,
+      "probability": 0.9935433864593506
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "んな",
+      "start": 24.57,
+      "end": 24.73,
+      "probability": 0.9986955523490906
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "服",
+      "start": 24.73,
+      "end": 24.85,
+      "probability": 0.9947670698165894
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "か",
+      "start": 24.85,
+      "end": 25.05,
+      "probability": 0.5383209586143494
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "決",
+      "start": 25.05,
+      "end": 25.19,
+      "probability": 0.9837622046470642
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "め",
+      "start": 25.19,
+      "end": 25.33,
+      "probability": 0.9980781078338623
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "た",
+      "start": 25.33,
+      "end": 25.43,
+      "probability": 0.9979372024536133
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "ら",
+      "start": 25.43,
+      "end": 25.55,
+      "probability": 0.9966830611228943
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "教",
+      "start": 25.55,
+      "end": 25.83,
+      "probability": 0.9978159666061401
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "えて",
+      "start": 25.83,
+      "end": 26.03,
+      "probability": 0.9905271530151367
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "リ",
+      "start": 26.03,
+      "end": 26.89,
+      "probability": 0.8282224535942078
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "ン",
+      "start": 26.89,
+      "end": 27.01,
+      "probability": 0.9739020466804504
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "ク",
+      "start": 27.01,
+      "end": 27.19,
+      "probability": 0.9977541565895081
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "コ",
+      "start": 27.19,
+      "end": 27.41,
+      "probability": 0.5002893805503845
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "ーデ",
+      "start": 27.41,
+      "end": 27.59,
+      "probability": 0.9595071077346802
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "ー",
+      "start": 27.59,
+      "end": 27.71,
+      "probability": 0.8180541396141052
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "とか",
+      "start": 27.71,
+      "end": 27.93,
+      "probability": 0.9843339323997498
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "絶",
+      "start": 27.93,
+      "end": 28.35,
+      "probability": 0.9901250600814819
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "対",
+      "start": 28.35,
+      "end": 28.71,
+      "probability": 0.9946432113647461
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "可愛",
+      "start": 28.71,
+      "end": 28.95,
+      "probability": 0.6365358233451843
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "い",
+      "start": 28.95,
+      "end": 29.13,
+      "probability": 0.9929364323616028
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "から",
+      "start": 29.13,
+      "end": 29.35,
+      "probability": 0.9393194317817688
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "した",
+      "start": 29.35,
+      "end": 29.79,
+      "probability": 0.9010552167892456
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 5,
+      "word": "い",
+      "start": 29.79,
+      "end": 30.07,
+      "probability": 0.8472412824630737
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 6,
+      "word": "ライ",
+      "start": 31.07,
+      "end": 31.43,
+      "probability": 0.3141971528530121
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 6,
+      "word": "ブ",
+      "start": 31.43,
+      "end": 31.61,
+      "probability": 0.9962683320045471
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 6,
+      "word": "当",
+      "start": 31.61,
+      "end": 31.81,
+      "probability": 0.44048070907592773
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 6,
+      "word": "時",
+      "start": 31.81,
+      "end": 31.95,
+      "probability": 0.8316174745559692
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 6,
+      "word": "く",
+      "start": 31.95,
+      "end": 32.07,
+      "probability": 0.30974462628364563
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 6,
+      "word": "まで",
+      "start": 32.07,
+      "end": 32.23,
+      "probability": 0.9679744839668274
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 6,
+      "word": "ライ",
+      "start": 32.23,
+      "end": 32.23,
+      "probability": 0.9085530042648315
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 6,
+      "word": "ブ",
+      "start": 32.23,
+      "end": 32.23,
+      "probability": 0.9932130575180054
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 6,
+      "word": "当",
+      "start": 32.23,
+      "end": 32.23,
+      "probability": 0.6475895047187805
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 6,
+      "word": "時",
+      "start": 32.23,
+      "end": 32.23,
+      "probability": 0.9816756844520569
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 6,
+      "word": "く",
+      "start": 32.23,
+      "end": 32.23,
+      "probability": 0.8598492741584778
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 6,
+      "word": "まで",
+      "start": 32.23,
+      "end": 32.23,
+      "probability": 0.9703961610794067
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "ライ",
+      "start": 32.23,
+      "end": 32.23,
+      "probability": 0.7778262495994568
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "ブ",
+      "start": 32.23,
+      "end": 32.23,
+      "probability": 0.9988885521888733
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "当",
+      "start": 32.23,
+      "end": 32.23,
+      "probability": 0.9672182202339172
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "時",
+      "start": 32.23,
+      "end": 32.23,
+      "probability": 0.995685338973999
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "く",
+      "start": 32.23,
+      "end": 32.23,
+      "probability": 0.9742693305015564
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "まで",
+      "start": 32.23,
+      "end": 32.29,
+      "probability": 0.9900374412536621
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "ライ",
+      "start": 32.29,
+      "end": 32.29,
+      "probability": 0.7541059851646423
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "ブ",
+      "start": 32.29,
+      "end": 32.29,
+      "probability": 0.999618649482727
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "当",
+      "start": 32.29,
+      "end": 32.29,
+      "probability": 0.9797174334526062
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "時",
+      "start": 32.29,
+      "end": 32.29,
+      "probability": 0.9971668124198914
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "く",
+      "start": 32.29,
+      "end": 32.29,
+      "probability": 0.9745357632637024
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "まで",
+      "start": 32.29,
+      "end": 32.29,
+      "probability": 0.9894382357597351
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "ライ",
+      "start": 32.29,
+      "end": 32.29,
+      "probability": 0.5627872347831726
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "ブ",
+      "start": 32.29,
+      "end": 32.29,
+      "probability": 0.9996042847633362
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "当",
+      "start": 32.29,
+      "end": 32.29,
+      "probability": 0.9832192063331604
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "時",
+      "start": 32.29,
+      "end": 32.29,
+      "probability": 0.9970544576644897
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "く",
+      "start": 32.29,
+      "end": 32.29,
+      "probability": 0.972221851348877
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 7,
+      "word": "まで",
+      "start": 32.29,
+      "end": 32.29,
+      "probability": 0.9928234815597534
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "word": "その",
+      "start": 32.29,
+      "end": 32.75,
+      "probability": 0.32758766412734985
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "word": "バ",
+      "start": 32.75,
+      "end": 32.97,
+      "probability": 0.915245771408081
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "word": "ンド",
+      "start": 32.97,
+      "end": 33.05,
+      "probability": 0.996768593788147
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "word": "の",
+      "start": 33.05,
+      "end": 33.23,
+      "probability": 0.9920620918273926
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "word": "曲",
+      "start": 33.23,
+      "end": 33.39,
+      "probability": 0.9887431859970093
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "word": "聞",
+      "start": 33.39,
+      "end": 33.65,
+      "probability": 0.4524358808994293
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "word": "き",
+      "start": 33.65,
+      "end": 33.81,
+      "probability": 0.9654875993728638
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "word": "ま",
+      "start": 33.81,
+      "end": 33.91,
+      "probability": 0.9016826748847961
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "word": "く",
+      "start": 33.91,
+      "end": 34.01,
+      "probability": 0.99280846118927
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "word": "って",
+      "start": 34.01,
+      "end": 34.25,
+      "probability": 0.9910071492195129
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "word": "予",
+      "start": 34.25,
+      "end": 34.61,
+      "probability": 0.6982262134552002
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "word": "習",
+      "start": 34.61,
+      "end": 34.73,
+      "probability": 0.804455041885376
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "word": "して",
+      "start": 34.73,
+      "end": 34.97,
+      "probability": 0.9878489971160889
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "word": "お",
+      "start": 34.97,
+      "end": 35.11,
+      "probability": 0.975770115852356
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "word": "か",
+      "start": 35.11,
+      "end": 35.21,
+      "probability": 0.9914986491203308
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "word": "ない",
+      "start": 35.21,
+      "end": 35.37,
+      "probability": 0.9982523322105408
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 8,
+      "word": "と",
+      "start": 35.37,
+      "end": 35.55,
+      "probability": 0.9869465231895447
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 9,
+      "word": "み",
+      "start": 36.09,
+      "end": 36.45,
+      "probability": 0.09926817566156387
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 9,
+      "word": "お",
+      "start": 36.45,
+      "end": 36.53,
+      "probability": 0.5265709161758423
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 9,
+      "word": "の",
+      "start": 36.53,
+      "end": 36.65,
+      "probability": 0.9610983729362488
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 9,
+      "word": "お",
+      "start": 36.65,
+      "end": 36.81,
+      "probability": 0.7245253324508667
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 9,
+      "word": "す",
+      "start": 36.81,
+      "end": 36.89,
+      "probability": 0.9158163070678711
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 9,
+      "word": "す",
+      "start": 36.89,
+      "end": 37.01,
+      "probability": 0.9975353479385376
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 9,
+      "word": "め",
+      "start": 37.01,
+      "end": 37.13,
+      "probability": 0.9987363219261169
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 9,
+      "word": "の",
+      "start": 37.13,
+      "end": 37.23,
+      "probability": 0.985834538936615
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 9,
+      "word": "曲",
+      "start": 37.23,
+      "end": 37.37,
+      "probability": 0.977211594581604
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 9,
+      "word": "とか",
+      "start": 37.37,
+      "end": 37.63,
+      "probability": 0.9718948602676392
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 9,
+      "word": "ある?",
+      "start": 37.63,
+      "end": 37.91,
+      "probability": 0.9179993271827698
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 10,
+      "word": "全部",
+      "start": 38.55,
+      "end": 38.91,
+      "probability": 0.6482390761375427
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 10,
+      "word": "聞",
+      "start": 38.91,
+      "end": 39.27,
+      "probability": 0.5323346853256226
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 10,
+      "word": "いて",
+      "start": 39.27,
+      "end": 39.49,
+      "probability": 0.9961060881614685
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 10,
+      "word": "当",
+      "start": 39.49,
+      "end": 39.95,
+      "probability": 0.890295684337616
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 10,
+      "word": "日",
+      "start": 39.95,
+      "end": 40.13,
+      "probability": 0.9754776954650879
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 10,
+      "word": "一",
+      "start": 40.13,
+      "end": 40.41,
+      "probability": 0.9889179468154907
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 10,
+      "word": "緒",
+      "start": 40.41,
+      "end": 40.55,
+      "probability": 0.998157411813736
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 10,
+      "word": "に",
+      "start": 40.55,
+      "end": 40.67,
+      "probability": 0.9942511320114136
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 10,
+      "word": "熱",
+      "start": 40.67,
+      "end": 40.85,
+      "probability": 0.9696789383888245
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 10,
+      "word": "衝",
+      "start": 40.85,
+      "end": 41.05,
+      "probability": 0.5279728658497334
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 10,
+      "word": "した",
+      "start": 41.05,
+      "end": 41.29,
+      "probability": 0.9712309241294861
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 10,
+      "word": "い!",
+      "start": 41.29,
+      "end": 41.85,
+      "probability": 0.9755498766899109
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "ああ、",
+      "start": 41.85,
+      "end": 42.65,
+      "probability": 0.373850017786026
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "もう",
+      "start": 43.03,
+      "end": 43.23,
+      "probability": 0.5912325382232666
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "楽",
+      "start": 43.23,
+      "end": 43.65,
+      "probability": 0.9323337078094482
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "し",
+      "start": 43.65,
+      "end": 43.85,
+      "probability": 0.9978470802307129
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "み",
+      "start": 43.85,
+      "end": 43.99,
+      "probability": 0.9916818737983704
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "す",
+      "start": 43.99,
+      "end": 44.11,
+      "probability": 0.8615360260009766
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "ぎ",
+      "start": 44.11,
+      "end": 44.23,
+      "probability": 0.9980329871177673
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "て",
+      "start": 44.23,
+      "end": 44.35,
+      "probability": 0.994345486164093
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "勉",
+      "start": 44.35,
+      "end": 44.53,
+      "probability": 0.979844480752945
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "強",
+      "start": 44.53,
+      "end": 44.73,
+      "probability": 0.9982372522354126
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "ど",
+      "start": 44.73,
+      "end": 44.87,
+      "probability": 0.8399655222892761
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "ころ",
+      "start": 44.87,
+      "end": 45.05,
+      "probability": 0.9976106882095337
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "じゃない",
+      "start": 45.05,
+      "end": 45.27,
+      "probability": 0.9795823097229004
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "か",
+      "start": 45.27,
+      "end": 45.59,
+      "probability": 0.9952406883239746
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "も。",
+      "start": 45.59,
+      "end": 45.77,
+      "probability": 0.9617146253585815
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "でも",
+      "start": 46.29,
+      "end": 46.69,
+      "probability": 0.8548421859741211
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "ライ",
+      "start": 46.69,
+      "end": 47.21,
+      "probability": 0.6964502930641174
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "ブ",
+      "start": 47.21,
+      "end": 47.39,
+      "probability": 0.9962252378463745
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "を",
+      "start": 47.39,
+      "end": 47.49,
+      "probability": 0.9939417839050293
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "楽",
+      "start": 47.49,
+      "end": 47.71,
+      "probability": 0.9965421557426453
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "し",
+      "start": 47.71,
+      "end": 47.89,
+      "probability": 0.994570791721344
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "む",
+      "start": 47.89,
+      "end": 48.01,
+      "probability": 0.9956707954406738
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "ため",
+      "start": 48.01,
+      "end": 48.21,
+      "probability": 0.9605328440666199
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "に",
+      "start": 48.21,
+      "end": 48.39,
+      "probability": 0.9985544085502625
+    },
+    {
+      "audio": "1_2_4_16k.wav",
+      "segment_id": 11,
+      "word": "も。",
+      "start": 48.39,
+      "end": 48.59,
+      "probability": 0.9957084655761719
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 # src/m3p/etl/dlc_to_pose.py
+
 import argparse
 import json
 import math
@@ -17,12 +18,9 @@ def dist(x1, y1, x2, y2):
     return float(math.hypot(x1 - x2, y1 - y2))
 
 
-def estimate_mouth6(row, COL, tau, rho):
+def compute_mouth_features(row, COL):
     """
-    row: DataFrame の1行（Series）
-    COL: dlc_columns (dict)
-    tau: (τ1, τ2, τ3)
-    rho: (ρ1, ρ2, ρ3)
+    1フレーム分から正規化済み open_h, mouth_w, 顔幅 fw を計算する。
     """
     fw = max(
         1e-6,
@@ -30,6 +28,17 @@ def estimate_mouth6(row, COL, tau, rho):
     )
     open_h = dist(row[COL["ulx"]], row[COL["uly"]], row[COL["llx"]], row[COL["lly"]]) / fw
     mouth_w = dist(row[COL["mlx"]], row[COL["mly"]], row[COL["mrx"]], row[COL["mry"]]) / fw
+    return open_h, mouth_w, fw
+
+
+def estimate_mouth6(row, COL, tau, rho):
+    """
+    row: DataFrame の1行（Series）
+    COL: dlc_columns (dict)
+    tau: (τ1, τ2, τ3)
+    rho: (ρ1, ρ2, ρ3)
+    """
+    open_h, mouth_w, fw = compute_mouth_features(row, COL)
 
     τ1, τ2, τ3 = tau
     ρ1, ρ2, ρ3 = rho
@@ -110,6 +119,66 @@ def compute_t_ms(df: pd.DataFrame, COL: dict) -> pd.Series:
     return (df[frame_col].astype(float) * 1000.0 / float(fps)).round().astype(int)
 
 
+def debug_stats_open_width(open_h_list, mouth_w_list, tau, rho, prefix="[debug]"):
+    """
+    open_h / mouth_w の分布と τ/ρ に対する位置関係をざっくり出力。
+    """
+    oh = np.array(open_h_list, dtype=float)
+    mw = np.array(mouth_w_list, dtype=float)
+
+    if oh.size == 0:
+        print(f"{prefix} no frames after filtering")
+        return
+
+    def q(x, qs):
+        return {str(q): float(np.quantile(x, q)) for q in qs}
+
+    print(f"{prefix} open_h stats: min={oh.min():.4f}, max={oh.max():.4f}, mean={oh.mean():.4f}")
+    print(f"{prefix} open_h quantiles:", q(oh, [0.1, 0.25, 0.5, 0.75, 0.9]))
+    print(f"{prefix} mouth_w stats: min={mw.min():.4f}, max={mw.max():.4f}, mean={mw.mean():.4f}")
+    print(f"{prefix} mouth_w quantiles:", q(mw, [0.1, 0.25, 0.5, 0.75, 0.9]))
+
+    τ1, τ2, τ3 = tau
+    ρ1, ρ2, ρ3 = rho
+
+    # τ によるゾーン比率
+    zones_open = {
+        f"< τ1 ({τ1:.3f})": float((oh < τ1).mean()),
+        f"[τ1, τ2) ({τ1:.3f}-{τ2:.3f})": float(((oh >= τ1) & (oh < τ2)).mean()),
+        f"[τ2, τ3) ({τ2:.3f}-{τ3:.3f})": float(((oh >= τ2) & (oh < τ3)).mean()),
+        f">= τ3 ({τ3:.3f})": float((oh >= τ3).mean()),
+    }
+    zones_width = {
+        f"< ρ1 ({ρ1:.3f})": float((mw < ρ1).mean()),
+        f"[ρ1, ρ2) ({ρ1:.3f}-{ρ2:.3f})": float(((mw >= ρ1) & (mw < ρ2)).mean()),
+        f"[ρ2, ρ3) ({ρ2:.3f}-{ρ3:.3f})": float(((mw >= ρ2) & (mw < ρ3)).mean()),
+        f">= ρ3 ({ρ3:.3f})": float((mw >= ρ3).mean()),
+    }
+
+    print(f"{prefix} open_h zone ratios:", zones_open)
+    print(f"{prefix} mouth_w zone ratios:", zones_width)
+
+
+def debug_stats_mouth_ids(raw_ids, smoothed_ids, prefix="[debug]"):
+    """
+    口型IDのクラス分布を出力（フィルタ前後）。
+    """
+
+    def hist(ids):
+        if not ids:
+            return {}
+        arr = np.array(ids, dtype=int)
+        counts = dict(zip(*np.unique(arr, return_counts=True)))
+        total = float(arr.size)
+        return {
+            MOUTHS[i]: {"count": int(c), "ratio": float(c / total)}
+            for i, c in counts.items()
+        }
+
+    print(f"{prefix} mouth6 histogram (raw):", hist(raw_ids))
+    print(f"{prefix} mouth6 histogram (smoothed):", hist(smoothed_ids))
+
+
 def main(cfg):
     paths = cfg["paths"]
     COL = cfg["dlc_columns"]  # default.yaml で DLC 列名を指定
@@ -122,9 +191,12 @@ def main(cfg):
     hys_low_keep = cfg.get("hys_low_keep", 1)
     hys_high_keep = cfg.get("hys_high_keep", 1)
 
+    debug = cfg.get("debug", False)
+
     os.makedirs(Path(paths["pose_timeline"]).parent, exist_ok=True)
 
     df = pd.read_csv(paths["dlc_csv"])
+    print(f"[dlc_to_pose] loaded CSV: {paths['dlc_csv']}  (rows={len(df)})")
 
     # --- t_ms 列の生成 ---
     df["t_ms"] = compute_t_ms(df, COL)
@@ -140,15 +212,41 @@ def main(cfg):
     lk_cols = [c for c in lk_cols if c and c in df.columns]
     if lk_cols and like_thr > 0:
         lk = df[lk_cols].min(axis=1)
+        before = len(df)
         df = df.loc[(lk >= like_thr) | (lk.isna())].copy()
+        after = len(df)
+        print(f"[dlc_to_pose] likelihood filter: {before} -> {after} rows (thr={like_thr})")
+    else:
+        print(f"[dlc_to_pose] likelihood filter: skipped (lk_cols={lk_cols}, thr={like_thr})")
 
-    # --- 口形推定 ---
+    if len(df) == 0:
+        print("[dlc_to_pose] no frames left after filtering, writing empty timeline.")
+        obj = {"meta": {"step_ms": step_ms}, "timeline": []}
+        with open(paths["pose_timeline"], "w", encoding="utf-8") as f:
+            json.dump(obj, f, ensure_ascii=False, indent=2)
+        return
+
+    # --- 口形推定の前に open_h / mouth_w を計算（デバッグ用） ---
+    open_h_list = []
+    mouth_w_list = []
+    for _, row in df.iterrows():
+        oh, mw, _ = compute_mouth_features(row, COL)
+        open_h_list.append(oh)
+        mouth_w_list.append(mw)
+
+    if debug:
+        debug_stats_open_width(open_h_list, mouth_w_list, tau, rho)
+
+    # --- 口形推定（raw ids）---
     mouths = [estimate_mouth6(row, COL, tau, rho) for _, row in df.iterrows()]
-    ids = [M2ID[m] for m in mouths]
+    raw_ids = [M2ID[m] for m in mouths]
 
     # スムージング
-    ids = median_filter(ids, median_k)
+    ids = median_filter(raw_ids, median_k)
     ids = hysteresis_filter(ids, low_keep=hys_low_keep, high_keep=hys_high_keep)
+
+    # デバッグ用 mouth6 ヒストグラム
+    debug_stats_mouth_ids(raw_ids, ids)
 
     # --- タイムライン圧縮 ---
     timeline = []
@@ -162,7 +260,7 @@ def main(cfg):
     with open(paths["pose_timeline"], "w", encoding="utf-8") as f:
         json.dump(obj, f, ensure_ascii=False, indent=2)
 
-    print(f"Wrote: {paths['pose_timeline']} (events={len(timeline)})")
+    print(f"[dlc_to_pose] Wrote: {paths['pose_timeline']} (events={len(timeline)})")
 
 
 if __name__ == "__main__":
@@ -172,4 +270,3 @@ if __name__ == "__main__":
     with open(args.config, "r", encoding="utf-8") as f:
         cfg = yaml.safe_load(f)
     main(cfg)
-

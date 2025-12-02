@@ -1,0 +1,70 @@
+# ============================================
+# M3' Day3 config (aggr preset)
+# ============================================
+
+paths:
+  dlc_csv: "in/1_0_1.csv"
+  pose_timeline: "out/day3/aggr/1_0_1/pose_timeline.json"
+  transcript: "in/day2/transcript/1_0_1_transcript.json"
+  train_samples: "out/day3/aggr/train_samples.jsonl"
+  val_samples:   "out/day3/aggr/val_samples.jsonl"
+  out_dir: "out/exp_day3_aggr"
+  # manifest: （コメントアウト）
+
+step_ms: 40
+
+dlc_columns:
+  timestamp: "timestamp"
+  fps: 25
+  frame: "frame"
+  ulx: "mouth_outer_upper_x"
+  uly: "mouth_outer_upper_y"
+  llx: "mouth_outer_lower_x"
+  lly: "mouth_outer_lower_y"
+  mlx: "mouth_outer_left_x"
+  mly: "mouth_outer_left_y"
+  mrx: "mouth_outer_right_x"
+  mry: "mouth_outer_right_y"
+  flx: "contour_left2_x"
+  fly: "contour_left2_y"
+  frx: "contour_right2_x"
+  fry: "contour_right2_y"
+  lk_ul: "mouth_outer_upper_likelihood"
+  lk_ll: "mouth_outer_lower_likelihood"
+  lk_ml: "mouth_outer_left_likelihood"
+  lk_mr: "mouth_outer_right_likelihood"
+
+# ★ Day3 aggr プリセット
+tau: [0.30, 0.70, 1.20]
+rho: [0.30, 0.60, 1.20]
+median_k: 1
+hys_low_keep: 0
+hys_high_keep: 1
+
+likelihood_threshold: 0.6
+
+dataset:
+  max_len: 160
+  min_T: 1
+  max_T: 200
+
+model:
+  emb_dim: 128
+  n_layers: 4
+  n_heads: 4
+  ffn_dim: 256
+  dropout: 0.1
+  ncls: 6
+
+train:
+  batch_size: 32
+  num_epochs: 20
+  lr: 1.0e-3
+  weight_decay: 1.0e-4
+  label_smoothing: 0.05
+  early_stop_patience: 5
+  grad_clip: 1.0
+  num_workers: 2
+  seed: 42
+
+device: "cuda"

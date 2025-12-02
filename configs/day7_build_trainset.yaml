@@ -1,0 +1,17 @@
+# configs/day7_build_trainset.yaml
+# Day7: 25fps 版 pose_timeline → train/val JSONL (v3) を作るための設定
+# ※ build_trainset.py 専用
+
+paths:
+  # ★ここを Day7 の実データに合わせて修正してください
+  #   - transcript: このセリフ動画に対応する transcript.json
+  #   - pose_timeline: 25fps DLC→ETL 済みの pose_timeline.json
+  transcript: "in/day2/transcript/1_0_1_transcript.json"      # ←あなたの実パスに置き換え
+  pose_timeline: "in/day2/pose/1_0_1.pose_timeline.json"     # ←あなたの実パスに置き換え
+
+  # ★ここが build_trainset の出力（M3’ 学習用 JSONL）
+  train_samples: "out/day7/train_samples.v3.jsonl"
+  val_samples:   "out/day7/val_samples.v3.jsonl"
+
+# M3’ 全体で 25fps (= 40ms) 前提
+step_ms: 40

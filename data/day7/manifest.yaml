@@ -1,0 +1,167 @@
+sessions:
+  - id: "1_0_2"
+    emo_id: "1_0"
+    transcript: "in/day7/transcript/1_0_2_normalized.json"
+    pose_timeline: "out/day7/pose/1_0_2.pose_timeline.json"
+
+  - id: "1_0_3"
+    emo_id: "1_0"
+    transcript: "in/day7/transcript/1_0_3_normalized.json"
+    pose_timeline: "out/day7/pose/1_0_3.pose_timeline.json"
+
+  - id: "1_0_4"
+    emo_id: "1_0"
+    transcript: "in/day7/transcript/1_0_4_normalized.json"
+    pose_timeline: "out/day7/pose/1_0_4.pose_timeline.json"
+
+  - id: "1_0_5"
+    emo_id: "1_0"
+    transcript: "in/day7/transcript/1_0_5_normalized.json"
+    pose_timeline: "out/day7/pose/1_0_5.pose_timeline.json"
+
+  - id: "1_0_71"
+    emo_id: "1_0"
+    transcript: "in/day7/transcript/1_0_71_normalized.json"
+    pose_timeline: "out/day7/pose/1_0_71.pose_timeline.json"
+
+  - id: "1_0_72"
+    emo_id: "1_0"
+    transcript: "in/day7/transcript/1_0_72_normalized.json"
+    pose_timeline: "out/day7/pose/1_0_72.pose_timeline.json"
+
+  - id: "1_0_73"
+    emo_id: "1_0"
+    transcript: "in/day7/transcript/1_0_73_normalized.json"
+    pose_timeline: "out/day7/pose/1_0_73.pose_timeline.json"
+
+  - id: "1_0_74"
+    emo_id: "1_0"
+    transcript: "in/day7/transcript/1_0_74_normalized.json"
+    pose_timeline: "out/day7/pose/1_0_74.pose_timeline.json"
+
+  - id: "1_0_75"
+    emo_id: "1_0"
+    transcript: "in/day7/transcript/1_0_75_normalized.json"
+    pose_timeline: "out/day7/pose/1_0_75.pose_timeline.json"
+
+  - id: "1_1_2"
+    emo_id: "1_1"
+    transcript: "in/day7/transcript/1_1_2_normalized.json"
+    pose_timeline: "out/day7/pose/1_1_2.pose_timeline.json"
+
+  - id: "1_1_3"
+    emo_id: "1_1"
+    transcript: "in/day7/transcript/1_1_3_normalized.json"
+    pose_timeline: "out/day7/pose/1_1_3.pose_timeline.json"
+
+  - id: "1_1_4"
+    emo_id: "1_1"
+    transcript: "in/day7/transcript/1_1_4_normalized.json"
+    pose_timeline: "out/day7/pose/1_1_4.pose_timeline.json"
+
+  - id: "1_1_5"
+    emo_id: "1_1"
+    transcript: "in/day7/transcript/1_1_5_normalized.json"
+    pose_timeline: "out/day7/pose/1_1_5.pose_timeline.json"
+
+  - id: "1_2_1"
+    emo_id: "1_2"
+    transcript: "in/day7/transcript/1_2_1_normalized.json"
+    pose_timeline: "out/day7/pose/1_2_1.pose_timeline.json"
+
+  - id: "1_2_2"
+    emo_id: "1_2"
+    transcript: "in/day7/transcript/1_2_2_normalized.json"
+    pose_timeline: "out/day7/pose/1_2_2.pose_timeline.json"
+
+  - id: "1_2_3"
+    emo_id: "1_2"
+    transcript: "in/day7/transcript/1_2_3_normalized.json"
+    pose_timeline: "out/day7/pose/1_2_3.pose_timeline.json"
+
+  - id: "1_2_4"
+    emo_id: "1_2"
+    transcript: "in/day7/transcript/1_2_4_normalized.json"
+    pose_timeline: "out/day7/pose/1_2_4.pose_timeline.json"
+
+  - id: "1_2_5"
+    emo_id: "1_2"
+    transcript: "in/day7/transcript/1_2_5_normalized.json"
+    pose_timeline: "out/day7/pose/1_2_5.pose_timeline.json"
+
+  - id: "2_1_1"
+    emo_id: "2_1"
+    transcript: "in/day7/transcript/2_1_1_normalized.json"
+    pose_timeline: "out/day7/pose/2_1_1.pose_timeline.json"
+
+  - id: "2_1_2"
+    emo_id: "2_1"
+    transcript: "in/day7/transcript/2_1_2_normalized.json"
+    pose_timeline: "out/day7/pose/2_1_2.pose_timeline.json"
+
+  - id: "2_1_3"
+    emo_id: "2_1"
+    transcript: "in/day7/transcript/2_1_3_normalized.json"
+    pose_timeline: "out/day7/pose/2_1_3.pose_timeline.json"
+
+  - id: "2_1_4"
+    emo_id: "2_1"
+    transcript: "in/day7/transcript/2_1_4_normalized.json"
+    pose_timeline: "out/day7/pose/2_1_4.pose_timeline.json"
+
+  - id: "2_1_5"
+    emo_id: "2_1"
+    transcript: "in/day7/transcript/2_1_5_normalized.json"
+    pose_timeline: "out/day7/pose/2_1_5.pose_timeline.json"
+
+  - id: "3_1_2"
+    emo_id: "3_1"
+    transcript: "in/day7/transcript/3_1_2_normalized.json"
+    pose_timeline: "out/day7/pose/3_1_2.pose_timeline.json"
+
+  - id: "3_1_3"
+    emo_id: "3_1"
+    transcript: "in/day7/transcript/3_1_3_normalized.json"
+    pose_timeline: "out/day7/pose/3_1_3.pose_timeline.json"
+
+  - id: "3_1_4"
+    emo_id: "3_1"
+    transcript: "in/day7/transcript/3_1_4_normalized.json"
+    pose_timeline: "out/day7/pose/3_1_4.pose_timeline.json"
+
+  - id: "3_1_5"
+    emo_id: "3_1"
+    transcript: "in/day7/transcript/3_1_5_normalized.json"
+    pose_timeline: "out/day7/pose/3_1_5.pose_timeline.json"
+
+split:
+  train_ids:
+    - "1_0_2"
+    - "1_0_3"
+    - "1_0_4"
+    - "1_0_5"
+    - "1_0_71"
+    - "1_0_72"
+    - "1_0_73"
+    - "1_0_74"
+    - "1_0_75"
+    - "1_1_2"
+    - "1_1_3"
+    - "1_1_4"
+    - "1_1_5"
+    - "1_2_1"
+    - "1_2_2"
+    - "1_2_3"
+    - "1_2_4"
+    - "1_2_5"
+    - "2_1_1"
+    - "2_1_2"
+    - "2_1_3"
+
+  val_ids:
+    - "2_1_4"
+    - "2_1_5"
+    - "3_1_2"
+    - "3_1_3"
+    - "3_1_4"
+    - "3_1_5"

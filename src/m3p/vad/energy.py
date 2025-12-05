@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 from dataclasses import dataclass, asdict
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 
 import numpy as np
 import soundfile as sf
@@ -20,7 +20,7 @@ def compute_frame_energy(
     wav_path: str,
     frame_ms: int = 20,
     hop_ms: int = 10,
-) -> tuple[np.ndarray, int, int, int, int]:
+) -> Tuple[np.ndarray, int, int, int, int]:
     """
     WAV を読み込み、フレームごとのエネルギーを計算する。
 
@@ -78,7 +78,7 @@ def energy_vad(
     """
     flags = energies > thr
     segments: List[VadSegment] = []
-    curr: Optional[tuple[str, int, int]] = None  # (kind, start_idx, end_idx)
+    curr: Optional[Tuple[str, int, int]] = None  # (kind, start_idx, end_idx)
 
     def flush_segment(kind: str, start_idx: int, end_idx: int) -> None:
         if start_idx is None:
@@ -114,6 +114,59 @@ def energy_vad(
     return segments
 
 
+def segments_to_frames(
+    segments: List[VadSegment],
+    audio_ms: int,
+    step_ms: int,
+) -> List[Dict[str, Any]]:
+    """
+    speech/silence の区間リストを 0, step_ms, ... のフレーム列に変換する。
+
+    各フレーム [t, t+step_ms) に対して:
+      - speech 区間との重なり率 ratio を計算
+      - voice_activity = 1 if ratio >= 0.5 else 0
+      - speech_prob    = ratio (0.0〜1.0)
+
+    というシンプルな定義にしている。
+    """
+    frames: List[Dict[str, Any]] = []
+
+    t = 0
+    while t < audio_ms:
+        win_start = t
+        win_end = min(t + step_ms, audio_ms)
+        win_len = max(1, win_end - win_start)
+
+        speech_ms = 0
+        for seg in segments:
+            if seg.type != "speech":
+                continue
+            s = seg.start_ms
+            e = seg.end_ms
+            # 重なりがなければスキップ
+            if e <= win_start or s >= win_end:
+                continue
+            overlap_start = max(s, win_start)
+            overlap_end = min(e, win_end)
+            if overlap_end > overlap_start:
+                speech_ms += (overlap_end - overlap_start)
+
+        ratio = float(speech_ms) / float(win_len)
+        va = 1 if ratio >= 0.5 else 0
+
+        frames.append(
+            {
+                "t_ms": t,
+                "voice_activity": va,
+                "speech_prob": ratio,
+            }
+        )
+
+        t += step_ms
+
+    return frames
+
+
 def run_energy_vad(
     wav_path: str,
     cfg: Dict[str, Any],
@@ -127,21 +180,25 @@ def run_energy_vad(
       - utt_id     (optional)
       - frame_ms
       - hop_ms
+      - step_ms
       - energy_thr
       - min_speech_ms
       - min_silence_ms
     """
     frame_ms = int(cfg.get("frame_ms", 20))
     hop_ms = int(cfg.get("hop_ms", 10))
+    step_ms = int(cfg.get("step_ms", 40))  # ★ mouth_timeline と揃える
     thr = float(cfg.get("energy_thr", 1e-4))
     min_speech_ms = int(cfg.get("min_speech_ms", 100))
     min_silence_ms = int(cfg.get("min_silence_ms", 100))
 
-    energies, sr, frame_ms, hop_ms, n_samples = compute_frame_energy(
+    energies, sr, frame_ms, hop_ms, _, = compute_frame_energy(
         wav_path,
         frame_ms=frame_ms,
         hop_ms=hop_ms,
     )
+
+    # エネルギー → speech/silence 区間
     segments = energy_vad(
         energies,
         frame_ms=frame_ms,
@@ -151,20 +208,30 @@ def run_energy_vad(
         min_silence_ms=min_silence_ms,
     )
 
+    # 音声長（ms）を算出
+    n_samples = int(len(energies) * hop_ms * sr / 1000)
     audio_ms = int(round(n_samples * 1000 / sr))
 
+    # 区間リスト → 40ms グリッドのフレーム列
+    frames = segments_to_frames(segments, audio_ms=audio_ms, step_ms=step_ms)
+
     out: Dict[str, Any] = {
-        "schema_version": "llm_tts_vad_energy_v0.1",  # VAD 用のミニ版
+        "schema_version": "llm_tts_vad_energy_v0.1",
         "session_id": cfg.get("session_id"),
         "utt_id": cfg.get("utt_id"),
+        "audio": wav_path.split("/")[-1],
         "wav_path": wav_path,
         "sample_rate": sr,
         "audio_ms": audio_ms,
         "frame_ms": frame_ms,
         "hop_ms": hop_ms,
+        "step_ms": step_ms,
         "energy_thr": thr,
         "min_speech_ms": min_speech_ms,
         "min_silence_ms": min_silence_ms,
+        # デバッグ用（DayA1〜A2 では特に有用）
         "segments": [asdict(s) for s in segments],
+        # M3' から見たときの本命 I/F
+        "frames": frames,
     }
     return out

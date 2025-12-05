@@ -1,18 +1,15 @@
-# configs/vad.default.yaml
-
 schema_version: llm_tts_vad_energy_v0.1
 
-# frame / hop 設定（ms）
+# 内部計算用フレーム
 frame_ms: 20
 hop_ms: 10
 
-# エネルギー閾値（まずはかなり小さめに）
-energy_thr: 1.0e-4
+# 出力グリッド（M3' と揃える）
+step_ms: 40
 
-# 区間として採用する最小長（ms）
+energy_thr: 1.0e-4
 min_speech_ms: 120
 min_silence_ms: 120
 
-# ログ用（任意）
 session_id: null
 utt_id: null
